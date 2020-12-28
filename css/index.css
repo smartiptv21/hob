@@ -94,11 +94,11 @@ width: 6em
 }
 /* BANER
 */
-.banner {
-margin-top: 68px;
-
-
-}
+.banner-image {
+    padding:  none;
+    top: -68px
+      
+    }
 .banner-image {
 padding:  none;
   
