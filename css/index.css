@@ -1,36 +1,21 @@
 /*
 GLOBAL
 */
-.koch {
-    padding: 15px 30px;
-    border: 0;
-    font-size: 1.5em;
-    -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-.koch {
-    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) alternate both;
-    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) alternate both;
-}
 
-img {
-    height: auto;
-    max-width: 100%;
-}
 
 /* iframe */
 
 .ifra {
     text-align: center;
-    padding: 1% 16%;
+    padding: 1% 26%;
     margin: -5% 15%;
     color: rgb(0, 0, 0);
-    background-color:  #ffb614;
+    background-color:#ffb614;
 }
 /*  fine des ifram*/
 
 .subtitle {
-color: #ff0000 !important; !important;
+color: red !important;
 }
 .heading-site {
 text-align: center;
@@ -94,13 +79,14 @@ width: 6em
 }
 /* BANER
 */
-.banner-image {
-    padding:  none;
-    top: -68px
-      
-    }
+.banner {
+margin-top: 68px;
+
+
+}
 .banner-image {
 padding:  none;
+top: -68px
   
 }
 .banner .banner-image {
@@ -132,14 +118,14 @@ margin-top: 60PX;
 color:  #ffb614
 } 
 .banner .banner-content .is-2 {
-color: #ffffff;
+color:  #ffffff;
 text-transform:uppercase;
 font-size:24px;
 font-weight:bold;
 overflow:hidden; clear:both; margin-top:35px; margin-bottom:10px; padding-bottom:0;
 }
 .hola{
-background: #ffb614!important;
+background:#ffb614!important;
 border: none;
 color: white;
 padding: 12px 32px !important;
@@ -220,15 +206,15 @@ flex-wrap: wrap;
 justify-content: center;
 }
 .pricing .plan {
-background-color: #fff;
-padding: 14PX;
-margin: 15px;
-border-radius: 5px;
-text-align: center;   
-transition: 0.3s;
-cursor: pointer;
-min-width:268px;
-box-shadow:0 0 5px rgba(000,000,000,0.2);
+    background-color: #fff;
+    padding: 30PX 0%;
+    margin: 15px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    min-width: 268px;
+    box-shadow: 0 0 5px rgba(000,000,000,0.2);
 }
 .pricing .plan:hover {
 box-shadow: 0 0 7px rgba(0, 0, 0, 0.4);
@@ -254,23 +240,23 @@ margin: 8px;
 margin-right: 4px;
 }
 .pricing .plan ul.features li .fa-check-circle {
-color: #00c9ff !important;
+color: #e02b20!important;
 }
 .pricing .plan ul.features li .fa-times-circle {
-color: #00c9ff !important;
+color: #e02b20!important;
 }
-.pricing .plan .plan-btn  {
-display:inherit;
-
-border: none;
-width: 100%;
-padding: 12px 35px;
-margin-top: 2rem;
-background-color: #ffb614 !important;
-color: #fff;
-border-radius: 5px;
-cursor: pointer;
-font-size: 16px;
+.pricing .plan .plan-btn {
+    display: inherit;
+    border: none;
+    width: 87%;
+    MARGIN: 6%;
+    padding: 7px 8px;
+    margin-top: 1rem;
+    background-color: #ffb614 !important;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 .pricing .plan.popular {
@@ -301,13 +287,13 @@ h4
 
 .rol {
 background-color:  rgba(163,17,21,0.64);
-color: #000000!important;
+color: #ffffff!important;
 text-align: center;
 }
 .role {
 
 background-color:  #00c9ff !important;
-color: #000000!important;
+color: #ffffff!important;
 text-align: center;
 
 }
@@ -777,7 +763,7 @@ font-size: 16px;
     margin: 2% 3% !important;
 }
 .hola{
-    background-color: #c11111b1 ;
+    background-color: #c11111 ;
     border: none;
     color: white;
     padding:11px 11px !important;
@@ -950,16 +936,21 @@ top: 100%;
 
 
 
+    @media (prefers-reduced-motion: no-preference){
+    :root {
+        padding: 4px;
+        scroll-behavior: smooth;
+        MARGIN: -10px;
+    }
 
 
-
-
+    }
 
 /* @media (max-width: 208px) and(max-width: 653px)
 {  */
-@media (max-width: 208px) and(max-width: 653px)
+@media (max-width: 360px) and(max-width: 653px)
 {
-
+    
 
 .popup .content {
     position: absolute;
@@ -1028,6 +1019,9 @@ padding-left: 9%;
 display: inline-block  !important;
 margin: 8% 8%;
 }
+.hola{
+    display: none !important;
+}
 
 .popup .content {
 position: absolute;
@@ -1062,7 +1056,7 @@ padding: -1% 22%!important;
 
 @media (max-width: 707px) and (max-width: 959px) { 
 .hola{
-    background-color: #c11111b1 ;
+    background-color: #c11111 ;
     border: none;
     color: white;
     padding:11px 11px !important;
@@ -1213,15 +1207,3 @@ margin: 2% !important;
 {  */
 
 
-
-
-
-
-
-
-    .pro{
-
-color: #000;
-background-color: rgb(248, 7, 7) !important;
-
-    }
