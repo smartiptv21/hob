@@ -12,9 +12,9 @@ body{
 .ifra {
     text-align: center;
     padding: 1% 26%;
-    margin: -5% 15%;
+    margin: 8% 15%;
     color: rgb(0, 0, 0);
-    background-color: rgb(235, 221, 221);
+    background-color: gold;
 }
 /*  fine des ifram*/
 
@@ -60,12 +60,7 @@ font-family: "Montserrat", sans-serif;
 float: left;
 margin-left: 30px;
 }
-                           
-.header .header-menu  {
-float: right;
-margin-right: 30px;
 
-}
 .header .header-menu a {
 margin-right: 15px;
 color: rgb(255, 255, 255)}
@@ -304,12 +299,7 @@ color: #ffffff!important;
 text-align: center;
 
 }
-.rol {
-padding: 15px 30px;
-border: 0;
-font-size: 1.5em;
-transition: color 1s;
-}
+
 
 .rol:hover {
 background-color: rgb(102, 0, 255);
@@ -1292,3 +1282,24 @@ margin: 2% !important;
             
         }
     }
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 479px){
+.hero .visible-xxs + .btn {
+    margin-top: 10px;
+    padding:0px 23px !important;
+}}
