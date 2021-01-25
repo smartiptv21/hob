@@ -613,84 +613,33 @@
 <script src="https://www.paypal.com/sdk/js?client-id=Ad27L-mOoc4hNbDdGFOgzdr-JW-4oFmfdXRFNnjLhL_0BQfdjDrr_b1xX_VpCNNCujt4nq_KStV2oqiS"></script>
  
 <script>
+<script>
 paypal.Buttons({
                 createOrder: function(data, actions) {
                     return actions.order.create({
-                        application_context: {
-                            brand_name :  { json_encode($product_title) } ,
-                            user_action : 'PAY_NOW',
-                        },
-                        
                         purchase_units: [{
                             amount: {
-                                value:  { json_encode($product_price_after + $fees)}  
+                                value: '20.01'
                             }
                         }]
-                    })
-};
+                    });
+                },
                 onApprove: function(data, actions) {
                     return actions.order.capture().then(function(details) {
                         alert('Transaction completed by ' + details.payer.name.given_name);
                         // Call your server to save the transaction
-                        return fetch('https://www.smartiptv-m3u.com/api/checkout/paypal/order/completed', {
-                              
+                        return fetch('/paypal-transaction-complete', {
                             method: 'post',
                             headers: {
-                                'content-type': 'application/json', 
-                                    "X-Requested-With": "XMLHttpRequest", 
-                                },
-                                body: JSON.stringify({ 
-                                    id : details.id,
-                                    status: details.status,
-                                    payerEmail: details.payer.email_address,
-                                    country: details.payer.address.country_code,
-                                    price: { json_encode($product_price_after) } 
-                                })
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                orderID: data.orderID
                             })
-                       
-                            .then(status)
-                            .then(function(response){
-                                // redirect to the completed page if paid
-                                $('#success').show(); 
-                                $('#pay_con').hide();  
-                                $('#paypal-button-container').remove();
-
-                                                    gtag('event', 'conversion', {
-                                'send_to': 'AW-559399114/NwceCLKysPIBEMqB34oC',
-                                'transaction_id': ''
-                            });
-
-                            })
-                            .catch(function(error) {
-                                // redirect to failed page if internal error occurs
-                                
-                                $('#exampleModalpayment').modal('show');
-
-                             
-                            });
-                    }else{
-                        $('#exampleModalpayment').modal('show');
-                    }
-                });
-                },
-
-                onCancel: function (data) {
-                    $('#exampleModalpayment').modal('show');
-                      
+                        });
+                    });
                 }
-
-
-
-                }).render('#paypal-button-container');
-                // This function displays Smart Payment Buttons on your web page.
-
-                function status(res) {
-                if (!res.ok) {
-                    throw new Error(res.statusText);
-                } 
-                return res;
-                } 
-
+            }).render('#paypal-button-container');
 </script>
 
 <form height="65px" target="_top" method="post" action="https://www.paypal.com/">
